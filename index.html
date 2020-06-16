@@ -91,7 +91,9 @@ $(document).ready(function(){
 	
 	function calculate() {
 		
+		var tsmax = 3;
 		if ( $('#tss').is( ':checked' ) ) {
+			tsmax = 5;
 			if ( $('#tsgear > option').length == 4 ) {
 				var index = $('#tsgear').prop('selectedIndex');
 				$('#tsgear').empty();
@@ -101,6 +103,7 @@ $(document).ready(function(){
 				$('#tsgear').val(index);
 			}
 		} else {
+			tsmax = 3;
 			if ( $('#tsgear > option').length == 6 ) {
 				var index = $('#tsgear').prop('selectedIndex');
 				$('#tsgear').empty();
@@ -146,7 +149,7 @@ $(document).ready(function(){
 		
 		// -- mantle 1 --
 		
-		var tsm1factor = 1 + (Math.min(3,(tsgear + m2ts)) * 0.1);
+		var tsm1factor = 1 + (Math.min(tsmax,(tsgear + m2ts)) * 0.1);
 		
 		var m1art = 0;
 		if (m2duration > 0 && m1recharge > 0) {
@@ -167,7 +170,7 @@ $(document).ready(function(){
 		
 		// -- mantle 2 --
 		
-		var tsm2factor = 1 + (Math.min(3,(tsgear + m1ts)) * 0.1);
+		var tsm2factor = 1 + (Math.min(tsmax,(tsgear + m1ts)) * 0.1);
 		
 		var m2art = 0;
 		if (m1duration > 0 && m2recharge > 0) {
