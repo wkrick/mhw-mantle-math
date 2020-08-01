@@ -67,10 +67,7 @@ $(document).ready(function(){
 		var index = $('#mantle1').prop('selectedIndex');
 		$('#m1duration').val(_mantleInfo[index][2]);
 		$('#m1recharge').val(_mantleInfo[index][3]);
-		if (index == 0) {
-			$('#m1ts').val(0);
-		}
-		$('#m1ts').prop('disabled',(index == 0));
+		$('#m1ts').val(0).prop('disabled',(index == 0));
 		calculate();
 	});
 	
@@ -78,10 +75,7 @@ $(document).ready(function(){
 		var index = $('#mantle2').prop('selectedIndex');
 		$('#m2duration').val(_mantleInfo[index][2]);
 		$('#m2recharge').val(_mantleInfo[index][3]);
-		if (index == 0) {
-			$('#m2ts').val(0);
-		}
-		$('#m2ts').prop('disabled',(index == 0));
+		$('#m2ts').val(0).prop('disabled',(index == 0));
 		calculate();
 	});
 	
